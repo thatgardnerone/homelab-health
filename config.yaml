@@ -1,0 +1,24 @@
+# Homelab Health Check Configuration
+
+# Systemd services to monitor (empty = check all failed services)
+# Optionally specify specific services to always show status for:
+systemd:
+  # monitor_specific:
+  #   - docker
+  #   - ssh
+  #   - nginx
+  show_all_failed: true
+
+# Docker container monitoring
+docker:
+  enabled: true
+  show_stopped: true
+  show_unhealthy: true
+  # Containers to ignore (e.g., intentionally stopped)
+  ignore:
+    # - container_name_here
+
+# Display settings
+display:
+  show_ok_status: false  # Only show problems by default
+  max_items: 10  # Limit output to avoid cluttering MOTD

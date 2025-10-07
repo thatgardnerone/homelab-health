@@ -1,0 +1,16 @@
+[project]
+name = "homelab-health"
+version = "0.1.0"
+description = "Health monitoring for homelab servers - checks services, containers, and system status"
+requires-python = ">=3.8"
+dependencies = [
+    "docker>=6.0.0",
+    "pyyaml>=6.0",
+]
+
+[project.scripts]
+homelab-health = "health_check:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
